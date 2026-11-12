@@ -19,6 +19,11 @@ gereksiz yükü azaltmanı sağlar. Hiçbir veri dışarı gönderilmez; her şe
 - Koyu/açık tema desteği
 - `Ctrl+Shift+K` (macOS: `Cmd+Shift+K`) ile açma
 
+## İndirme
+
+Hazır paket: [Releases](https://github.com/Aphelioxe/sekme-operatoru/releases) sayfasından
+`sekme-operatoru-2.0.0.zip` dosyasını indir, bir klasöre çıkar ve aşağıdaki adımları izle.
+
 ## Kurulum
 
 1. Chrome'da `chrome://extensions` adresini aç.
