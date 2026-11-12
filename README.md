@@ -24,7 +24,7 @@ gereksiz yükü azaltmanı sağlar. Hiçbir veri dışarı gönderilmez; her şe
 1. Chrome'da `chrome://extensions` adresini aç.
 2. Sağ üstteki **Geliştirici modu**nu aç.
 3. **Paketlenmemiş öğe yükle** düğmesine tıkla.
-4. Bu klasörü seç: `Projeler\sekme-operatoru`
+4. İndirdiğin `sekme-operatoru` klasörünü seç (içinde `manifest.json` bulunmalı)
 5. Araç çubuğundaki uzantı simgesine tıkla. Simgeyi görmek için bulmacaya tıklayıp
    **Sekme Operatörü**nü sabitleyebilirsin.
 
@@ -88,7 +88,8 @@ sekme-operatoru/
 └─ README.md
 ```
 
-`Projeler` klasöründe ayrıca tamamlanmış **konser-modu** eklentisi bulunur; iki eklenti
+Ayrıca yine Chrome için hazırlanmış
+[konser-modu](https://github.com/Aphelioxe/konser-modu) eklentisi bulunur; iki eklenti
 birbirinden bağımsızdır.
 
 ## İzinler
