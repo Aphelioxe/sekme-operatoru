@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sekme Operatörü</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="5" width="13" height="13" rx="2" />
+          <path d="M8 2h11a2 2 0 0 1 2 2v11" />
+        </svg>
+      </span>
+      <span class="brand-name">Sekme Operatörü</span>
+      <button id="sleep" class="ghost-btn" type="button" disabled
+              title="Bu penceredeki uygun sekmeleri bellekten boşaltır">
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z" />
+        </svg>
+        <span id="sleep-label">Askıya al</span>
+      </button>
+    </div>
+
+    <div class="search">
+      <svg class="search-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="m20 20-3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+      </svg>
+      <input id="search" type="search" placeholder="Sekme ara…" aria-label="Sekme ara"
+             autocomplete="off" spellcheck="false" />
+    </div>
+
+    <div class="meta">
+      <span id="count" aria-live="polite">Yükleniyor…</span>
+      <span class="keys" title="↑ / ↓: gez · Enter: aç · Del: kapat · Esc: temizle">
+        <kbd>↑</kbd><kbd>↓</kbd> gez
+        <kbd>↵</kbd> aç
+        <kbd>Del</kbd> kapat
+      </span>
+    </div>
+
+    <div class="filters" role="group" aria-label="Sekme filtresi">
+      <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">Tümü</button>
+      <button class="chip" type="button" data-filter="window" aria-pressed="false">Bu pencere</button>
+      <button class="chip" type="button" data-filter="audio" aria-pressed="false">Ses</button>
+      <button class="chip" type="button" data-filter="pinned" aria-pressed="false">Sabit</button>
+      <span id="memory" class="memory" title="Bellekten boşaltılmış (askıya alınmış) sekmeler">0 uykuda</span>
+    </div>
+  </header>
+
+  <main id="list" class="list" role="listbox" aria-label="Açık sekmeler"></main>
+
+  <div id="empty" class="empty" hidden>
+    <svg class="empty-icon" viewBox="0 0 24 24" width="34" height="34" aria-hidden="true">
+      <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="1.6" />
+      <path d="m20 20-4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+      <path d="M8.5 11h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+    </svg>
+    <p id="empty-title">Eşleşen sekme yok</p>
+    <span id="empty-hint">Farklı bir şey aramayı dene.</span>
+  </div>
+
+  <footer class="footer">
+    <button id="dedupe" class="btn" type="button" disabled
+            title="Aynı adresi açan fazladan sekmeleri kapatır; sabitlenmiş veya etkin kopya korunur">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="m12 2 9 5-9 5-9-5 9-5Z" />
+        <path d="m3 12 9 5 9-5" />
+        <path d="m3 17 9 5 9-5" />
+      </svg>
+      <span>Yinelenenleri kapat</span>
+      <span id="dupe-count" class="pill" hidden>0</span>
+    </button>
+    <button id="copy" class="btn" type="button" disabled
+            title="Eşleşen sekmelerin adreslerini satır satır kopyalar">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="9" y="9" width="13" height="13" rx="2" />
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+      </svg>
+      <span id="copy-label">Bağlantıları kopyala</span>
+    </button>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
